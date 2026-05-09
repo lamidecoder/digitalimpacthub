@@ -16,9 +16,11 @@ export default function Nav() {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
   const pathname = usePathname();
+  const isHome = pathname === "/";
 
   useEffect(() => {
-    const fn = () => setScrolled(window.scrollY > 40);
+    const fn = () => setScrolled(window.scrollY > 60);
+    fn();
     window.addEventListener("scroll", fn, { passive: true });
     return () => window.removeEventListener("scroll", fn);
   }, []);
@@ -30,13 +32,38 @@ export default function Nav() {
 
   useEffect(() => { setOpen(false); }, [pathname]);
 
+  const navScrolled = isHome ? scrolled : true;
+
   return (
     <>
-      <nav className={`nav-root${scrolled ? " scrolled" : ""}`}>
-        <Link href="/" className="nav-logo">
-          <Image src="/logo.jpg" alt="The Digital Impact Hub" width={38} height={38} className="nav-logo-img" />
-          <div className="nav-logo-text">
-            <span className="t1">The Digital Impact Hub</span>
+      <nav className={`nav-root${navScrolled ? " scrolled" : ""}`}>
+        <Link href="/" className="nav-logo" style={{ display: "flex", alignItems: "center", gap: 10 }}>
+          {/* Use the correct black logo — invert to white when nav is transparent */}
+          <div style={{
+            width: 44,
+            height: 44,
+            borderRadius: 6,
+            overflow: "hidden",
+            background: navScrolled ? "transparent" : "rgba(255,255,255,0.08)",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+            flexShrink: 0,
+          }}>
+            <Image
+              src="/logo.png"
+              alt="Digital Impact Hub"
+              width={40}
+              height={40}
+              style={{
+                objectFit: "contain",
+                filter: navScrolled ? "none" : "invert(1) brightness(2)",
+                transition: "filter 0.4s",
+              }}
+            />
+          </div>
+          <div>
+            <span className="t1">Digital Impact Hub</span>
             <span className="t2">Learn. Connect. Thrive.</span>
           </div>
         </Link>
@@ -51,7 +78,7 @@ export default function Nav() {
               {l.label}
             </Link>
           ))}
-          <Link href="/webinar" className="btn-primary" style={{ padding: "0.6rem 1.4rem", fontSize: "0.76rem" }}>
+          <Link href="/webinar" className="nav-btn-register">
             Register Now
           </Link>
         </div>
@@ -66,20 +93,20 @@ export default function Nav() {
       </nav>
 
       <div className={`mobile-menu${open ? " open" : ""}`}>
-        <Link href="/" className="nav-logo" style={{ marginBottom: "0.5rem" }}>
-          <Image src="/logo.jpg" alt="Logo" width={40} height={40} className="nav-logo-img" />
-          <div className="nav-logo-text">
-            <span className="t1">The Digital Impact Hub</span>
+        <Link href="/" style={{ display: "flex", alignItems: "center", gap: 10, marginBottom: "0.5rem" }} onClick={() => setOpen(false)}>
+          <Image src="/logo.png" alt="Logo" width={44} height={44} style={{ objectFit: "contain" }} />
+          <div>
+            <span className="t1">Digital Impact Hub</span>
             <span className="t2">Learn. Connect. Thrive.</span>
           </div>
         </Link>
-        <div style={{ width: 40, height: 1, background: "var(--border)", margin: "0.25rem 0 1rem" }} />
+        <div style={{ width: 40, height: 1, background: "var(--border)", margin: ".5rem 0 1rem" }} />
         {links.map((l) => (
-          <Link key={l.href} href={l.href} className="mobile-nav-link">
+          <Link key={l.href} href={l.href} className="mobile-nav-link" onClick={() => setOpen(false)}>
             {l.label}
           </Link>
         ))}
-        <Link href="/webinar" className="btn-primary" style={{ marginTop: "0.75rem", padding: "1rem 2.5rem" }}>
+        <Link href="/webinar" className="btn-primary" style={{ marginTop: ".75rem", padding: "1rem 2.5rem" }} onClick={() => setOpen(false)}>
           Register Now
         </Link>
       </div>
