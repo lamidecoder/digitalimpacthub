@@ -1,12 +1,12 @@
-/** @type {import("next").NextConfig} */
+/** @type {import('next').NextConfig} */
 const nextConfig = {
   images: {
-    localPatterns: [
+    remotePatterns: [
       {
-        pathname: "/**",
+        protocol: "https",
+        hostname: "images.pexels.com",
       },
     ],
   },
 };
-
 module.exports = nextConfig;

@@ -63,7 +63,13 @@ export default function AboutPage() {
                 </p>
               </div>
               <div className="reveal" style={{ position: "relative" }}>
-                <Image src="/oyinda.jpg" alt="Digital Impact Hub community" width={560} height={600} style={{ width: "100%", height: "560px", objectFit: "cover", display: "block" }} />
+                {/* Pexels photo 6238012 — happy Black students in classroom. Free, no attribution needed.
+                    Replace with your own community photo by saving it to /public/community.jpg */}
+                <img
+                  src="https://images.pexels.com/photos/6238012/pexels-photo-6238012.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop"
+                  alt="Digital Impact Hub community learners"
+                  style={{ width: "100%", height: "560px", objectFit: "cover", objectPosition: "center top", display: "block" }}
+                />
                 <div style={{ position: "absolute", bottom: "2rem", left: "-1.5rem", background: "var(--accent)", padding: "1.5rem 2rem" }}>
                   <div className="serif" style={{ fontSize: "2rem", fontWeight: 700, color: "var(--white)", lineHeight: 1 }}>1K+</div>
                   <div style={{ fontSize: ".7rem", fontWeight: 600, color: "rgba(255,255,255,.85)", textTransform: "uppercase", letterSpacing: ".08em", marginTop: ".3rem" }}>Learners impacted</div>
