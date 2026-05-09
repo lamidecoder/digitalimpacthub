@@ -475,6 +475,36 @@ img{display:block;max-width:100%;}
 .footer-built a{color:rgba(255,255,255,.6);transition:color .3s;}
 .footer-built a:hover{color:var(--accent2);}
 
+
+/* ── SERVICE ROW ── */
+.service-row {
+  display: grid;
+  grid-template-columns: 72px 1fr 1fr;
+  border-bottom: 1px solid var(--border);
+}
+.service-row-border { border-bottom: 1px solid var(--border); }
+.service-row:last-child { border-bottom: none; }
+.service-row-num {
+  padding: 2.5rem 1.25rem;
+  border-right: 1px solid var(--border);
+  display: flex;
+  align-items: flex-start;
+}
+.service-row-main {
+  padding: 2.5rem 2rem;
+  border-right: 1px solid var(--border);
+}
+.service-row-features {
+  padding: 2.5rem 2rem;
+}
+
+/* ── WORKSHOPS GRID ── */
+.workshops-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.25rem;
+}
+
 /* ─────────────────────────────────────────
    RESPONSIVE
 ──────────────────────────────────────────*/
@@ -484,6 +514,10 @@ img{display:block;max-width:100%;}
   .container{padding:0 1.5rem;}
   .footer-grid{grid-template-columns:1fr 1fr;gap:3rem;}
   .hero-content{max-width:700px;}
+  /* Service rows — hide features column on tablet */
+  .service-row{grid-template-columns:60px 1fr;}
+  .service-row-features{display:none;}
+  .service-row-main{border-right:none;}
 }
 
 @media(max-width:900px){
@@ -499,47 +533,68 @@ img{display:block;max-width:100%;}
   /* Page banner */
   .page-banner{padding:8rem 0 4rem;}
   .page-banner-title{font-size:2.5rem;}
-  /* Grids */
+  /* All 2-col grids stack */
   .two-col{grid-template-columns:1fr!important;gap:3rem!important;}
   .about-two-col{grid-template-columns:1fr!important;gap:3rem!important;}
+  /* Focus areas */
   .focus-grid{grid-template-columns:1fr 1fr!important;}
+  /* Workshops */
   .workshops-grid{grid-template-columns:1fr!important;}
-  .stats-band{grid-template-columns:1fr 1fr!important;}
-  .stats-band>div{border-right:none!important;border-bottom:1px solid rgba(255,255,255,.08);}
-  .values-grid{grid-template-columns:1fr!important;}
-  .web-grid{grid-template-columns:1fr!important;}
-  .web-sidebar{position:static!important;}
-  .contact-grid{grid-template-columns:1fr!important;gap:3.5rem!important;}
-  .video-grid{grid-template-columns:1fr!important;}
+  /* Steps */
   .steps-grid{grid-template-columns:1fr 1fr!important;}
   .steps-grid>div{border-right:none!important;border-bottom:1px solid var(--border);}
+  /* Testimonials */
   .testimonial-grid{grid-template-columns:1fr!important;}
+  /* Why grid */
   .why-grid{grid-template-columns:1fr 1fr!important;}
+  /* Webinar page */
+  .web-grid{grid-template-columns:1fr!important;}
+  .web-sidebar{position:static!important;}
+  /* Contact */
+  .contact-grid{grid-template-columns:1fr!important;gap:3.5rem!important;}
+  /* Video grid */
+  .video-grid{grid-template-columns:1fr!important;}
+  /* Footer */
   .footer-grid{grid-template-columns:1fr!important;gap:2.5rem!important;}
+  /* Stats band */
+  .stats-band{grid-template-columns:1fr 1fr!important;}
+  .stats-band>div{border-right:none!important;border-bottom:1px solid rgba(255,255,255,.08);}
+  /* Values */
+  .values-grid{grid-template-columns:1fr!important;}
 }
 
 @media(max-width:640px){
   .container{padding:0 1.25rem;}
-  /* Hero on small screens */
+  /* Hero */
   .hero-fullscreen{min-height:100svh;}
   .hero-h1-top{font-size:1.75rem;}
   .hero-h1-italic{font-size:1.75rem;}
   .btn-hero-pill{padding:.85rem 2rem;font-size:.75rem;}
   .hero-stats-row{gap:0;}
   .hero-stat{padding:0 .5rem;}
-  /* Focus grid */
+  /* Service rows — fully stacked, single column */
+  .service-row{grid-template-columns:1fr!important;display:flex!important;flex-direction:column!important;}
+  .service-row-num{padding:1.5rem 1.5rem .5rem;border-right:none!important;border-bottom:none;}
+  .service-row-main{padding:0 1.5rem 1.5rem;border-right:none!important;}
+  .service-row-features{display:flex!important;flex-direction:column;padding:1.25rem 1.5rem;background:var(--cream);border-top:1px solid var(--border);}
+  /* Focus areas single col */
   .focus-grid{grid-template-columns:1fr!important;}
-  /* Stats band */
-  .stats-band{grid-template-columns:1fr!important;}
-  .stats-band>div:last-child{border-bottom:none;}
-  /* Steps */
+  /* Workshops single col */
+  .workshops-grid{grid-template-columns:1fr!important;}
+  /* Steps single col */
   .steps-grid{grid-template-columns:1fr!important;}
   .steps-grid>div:last-child{border-bottom:none;}
-  /* Why grid */
+  /* Why grid single col */
   .why-grid{grid-template-columns:1fr!important;}
-  /* Buttons — full width on mobile */
-  .btn-primary,.btn-secondary,.btn-white,.btn-outline-white,.btn-hero{width:100%;text-align:center;}
+  /* Stats */
+  .stats-band{grid-template-columns:1fr!important;}
+  .stats-band>div:last-child{border-bottom:none;}
+  /* Testimonials */
+  .testimonial-grid{grid-template-columns:1fr!important;}
+  /* Buttons full width */
+  .btn-primary,.btn-secondary,.btn-white,.btn-outline-white,.btn-hero-pill{width:100%;justify-content:center;}
   .hero-ctas,.banner-ctas{flex-direction:column!important;align-items:stretch!important;width:100%;}
   /* Page banner */
   .page-banner-title{font-size:2rem;}
+  .page-banner{padding:7rem 0 3.5rem;}
 }
