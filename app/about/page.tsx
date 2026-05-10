@@ -63,10 +63,8 @@ export default function AboutPage() {
                 </p>
               </div>
               <div className="reveal" style={{ position: "relative" }}>
-                {/* Pexels photo 6238012 — happy Black students in classroom. Free, no attribution needed.
-                    Replace with your own community photo by saving it to /public/community.jpg */}
                 <img
-                  src="https://images.pexels.com/photos/6238012/pexels-photo-6238012.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop"
+                  src="/community.jpg"
                   alt="Digital Impact Hub community learners"
                   style={{ width: "100%", height: "560px", objectFit: "cover", objectPosition: "center top", display: "block" }}
                 />
