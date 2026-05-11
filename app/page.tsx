@@ -134,7 +134,7 @@ export default function Home() {
                   We believe technology should feel accessible, empowering, and practical for everyone.
                 </p>
                 <div className="reveal" style={{ display: "flex", gap: "1rem", flexWrap: "wrap" }}>
-                  <Link href="/about" className="btn-primary">Meet The Founder</Link>
+                  <Link href="/about#founder" className="btn-primary">Meet The Founder</Link>
                   <Link href="/services" className="btn-secondary">Our Services</Link>
                 </div>
               </div>
@@ -214,7 +214,7 @@ export default function Home() {
                 </ul>
               </div>
               <div className="reveal" style={{ position: "relative" }}>
-                <Image src="/oyinda.jpg" alt="Oyinda Lawal, Founder of Digital Impact Hub" width={580} height={520} style={{ width: "100%", height: "520px", objectFit: "cover", objectPosition: "center top", display: "block" }} />
+                <Image src="/community-home.jpg" alt="Digital Impact Hub community" width={580} height={520} style={{ width: "100%", height: "520px", objectFit: "cover", objectPosition: "center", display: "block" }} />
                 <div style={{ position: "absolute", bottom: "2rem", right: "-1rem", background: "var(--accent)", padding: "1.4rem 1.75rem" }}>
                   <div className="serif" style={{ fontSize: "1.8rem", fontWeight: 700, color: "#fff", lineHeight: 1 }}>1K+</div>
                   <div style={{ fontSize: ".7rem", fontWeight: 600, color: "rgba(255,255,255,.85)", textTransform: "uppercase", letterSpacing: ".08em", marginTop: ".25rem" }}>Lives impacted</div>

@@ -80,7 +80,7 @@ export default function AboutPage() {
 
       {/* FOUNDER */}
       <ScrollReveal>
-        <section style={{ padding: "8rem 0", background: "var(--cream)" }}>
+        <section id="founder" style={{ padding: "8rem 0", background: "var(--cream)" }}>
           <div className="container">
             <div className="about-two-col" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "6rem", alignItems: "center" }}>
               <div className="reveal" style={{ position: "relative" }}>

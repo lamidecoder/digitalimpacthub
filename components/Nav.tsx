@@ -63,7 +63,7 @@ export default function Nav() {
             />
           </div>
           <div>
-            <span className="t1">Digital Impact Hub</span>
+            <span className="t1">Digital Impact Hub CIC</span>
             <span className="t2">Learn. Connect. Thrive.</span>
           </div>
         </Link>
@@ -96,7 +96,7 @@ export default function Nav() {
         <Link href="/" style={{ display: "flex", alignItems: "center", gap: 10, marginBottom: "0.5rem" }} onClick={() => setOpen(false)}>
           <Image src="/logo.png" alt="Logo" width={44} height={44} style={{ objectFit: "contain" }} />
           <div>
-            <span className="t1">Digital Impact Hub</span>
+            <span className="t1">Digital Impact Hub CIC</span>
             <span className="t2">Learn. Connect. Thrive.</span>
           </div>
         </Link>

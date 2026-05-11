@@ -16,7 +16,7 @@ export default function Footer() {
                 style={{ objectFit: "contain", filter: "invert(1) brightness(2)" }}
               />
               <div>
-                <span className="t1" style={{ color: "#ffffff" }}>Digital Impact Hub</span>
+                <span className="t1" style={{ color: "#ffffff" }}>Digital Impact Hub CIC</span>
                 <span className="t2">Learn. Connect. Thrive.</span>
               </div>
             </Link>
